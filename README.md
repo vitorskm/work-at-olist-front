@@ -80,8 +80,9 @@ pixel.
 
 * Application must be written in HTML, JavaScript and CSS. You can only make
   use of a CSS preprocessor.
-* You cannot use any Javascript library or framework with the exception of
-  polyfills.
+* You **may not** use any Javascript library or framework such as React, with the exception of
+  polyfills and testing libraries.
+* You **may** use modern JavaScript development tools such as task runners, compilers and bundlers (ex.: webpack, Babel, ESLint).
 * Your page must support all modern browsers and IE 11+.
 * Write the project documentation containing: [Sample](https://github.com/elsewhencode/project-guidelines/blob/master/README.sample.md)
   * Installing and testing instructions;
