@@ -1,0 +1,37 @@
+.olist-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 375px;
+    height: 70px;
+    font-family: "SF Text";
+}
+
+.input-label {
+    color: #696D8C;
+    line-height: 26px;
+    font-size: 16px;
+}
+
+.input-item {
+    font-family: "SF Text";
+    line-height: 26px;
+    text-indent: 16px;
+    font-size: 16px;
+    height: 44px;
+    color: #312F4F;
+    background: #FFFFFF;
+    border: 1px solid #B6B9D0;
+    box-sizing: border-box;
+    box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.05);
+}
+
+.olist-input-wrapper .input-item>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0
+}
+
+.input-item:focus {
+    outline-color: transparent;
+    outline-style: none;
+}

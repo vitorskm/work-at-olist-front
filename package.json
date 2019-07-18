@@ -1,0 +1,22 @@
+{
+  "name": "olist",
+  "version": "1.0.0",
+  "description": "[Olist](https://olist.com/) is a company that offers an integration platform\r for sellers and marketplaces allowing them to sell their products across\r multiple channels.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitorskm/work-at-olist-front.git"
+  },
+  "author": "Vitor Araujo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitorskm/work-at-olist-front/issues"
+  },
+  "homepage": "https://github.com/vitorskm/work-at-olist-front#readme",
+  "dependencies": {
+    "eslint": "^6.0.1"
+  }
+}
