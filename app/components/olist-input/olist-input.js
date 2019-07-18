@@ -50,14 +50,6 @@ class OlistInputComponent extends HTMLElement {
         return this.getAttribute("type");
     }
 
-    passwordValidation(){
-        return {
-            sixChar: false,
-            oneUppercase: false,
-            oneNumber: false
-        }
-    }
-
     textValidation(type) {
         const validationFunctions = {
             email: this.emailInputValidation,
