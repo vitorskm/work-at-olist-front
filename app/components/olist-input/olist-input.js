@@ -1,8 +1,8 @@
 
-var style = document.createElement('link');
-style.rel = 'stylesheet';
-style.type = 'text/css';
-style.href = './app/components/olist-input/olist-input.css';
+var componetStyle = document.createElement('link');
+componetStyle.rel = 'stylesheet';
+componetStyle.type = 'text/css';
+componetStyle.href = './app/components/olist-input/olist-input.css';
 
 class OlistInputComponent extends HTMLElement {
     constructor() {
@@ -25,8 +25,8 @@ class OlistInputComponent extends HTMLElement {
                 <input class="input-item " type="${this.getAttribute("type")}" ${this.placeholder}">
             </div>
         `;
-        this.element = this.root.querySelector("input");
-        this.root.appendChild(style);
+        const style = componetStyle.cloneNode(true);
+        this.root.append(style);
     }
 
     get value() {
