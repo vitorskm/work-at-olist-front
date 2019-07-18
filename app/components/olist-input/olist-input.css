@@ -25,6 +25,18 @@
     box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.05);
 }
 
+.input-item.valid {
+    border: 1px solid #17D499;
+}
+
+.input-item.invalid {
+    border: 1px solid #F79682;
+}
+
+.input-item::placeholder {
+    color: #9499B3;
+}
+
 .olist-input-wrapper .input-item>input {
     position: absolute;
     z-index: -1;
