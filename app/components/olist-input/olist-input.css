@@ -4,12 +4,14 @@
     max-width: 375px;
     height: 70px;
     font-family: "SF Text";
+    margin-bottom: 20px;
 }
 
 .input-label {
     color: #696D8C;
     line-height: 26px;
     font-size: 16px;
+    font-family: "SF Text Pro"
 }
 
 .input-item {

@@ -1,0 +1,16 @@
+#validation-steps-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.step-shape {
+    display: list-item;
+    list-style: none;
+    text-align: -webkit-match-parent;
+    width: 100%;
+    margin: 0 2px;
+    height: 8px;
+    background: #EAEAF4;
+    border-radius: 10px;
+}
