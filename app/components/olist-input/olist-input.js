@@ -30,7 +30,7 @@ class OlistInputComponent extends HTMLElement {
             </div>
         `;
         const style = componetStyle.cloneNode(true);
-        this.root.append(style);
+        this.root.appendChild(style);
         // Get the main element of this component
         this.element = this.root.querySelector("input");
         // Get first element of this component

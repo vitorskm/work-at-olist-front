@@ -1,11 +1,13 @@
 @font-face {
     font-family: "SF Text";
-    src: url("../fonts/SF-Regular.otf");
+    src: url('../fonts/SFUIText-Medium.eot');
+    src: url('../fonts/SFUIText-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/SF-Regular.otf') format("opentype");
 }
 
 @font-face {
     font-family: "SF Text Pro";
-    src: url("../fonts/sf-pro-text-regular.ttf");
+    src: url('../fonts/SFProText-Medium.eot');
+    src: url('../fonts/SFProText-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/SF-Regular.otf') format("opentype");
 }
 
 

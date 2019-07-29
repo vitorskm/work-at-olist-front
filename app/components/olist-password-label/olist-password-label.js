@@ -22,7 +22,7 @@ class OlistPasswordLabelComponent extends HTMLElement {
             </div>
         `;
         const style = componetStyle.cloneNode(true);
-        this.root.append(style);
+        this.root.appendChild(style);
         this.element = this.root.querySelector("label");
 
         this.addEventListener('valid', (event) => {

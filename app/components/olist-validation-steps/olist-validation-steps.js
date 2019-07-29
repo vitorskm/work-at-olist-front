@@ -39,7 +39,7 @@ class OlistValidationStepsComponent extends HTMLElement {
             </div>
         `;
         const style = componetStyle.cloneNode(true);
-        this.root.append(style);
+        this.root.appendChild(style);
 
         // insert N elements by attributes value
         this.includeStepsValidation();

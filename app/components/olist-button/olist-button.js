@@ -32,9 +32,10 @@ class OlistButtonComponent extends HTMLElement {
             </div>
         `;
         const style = componetStyle.cloneNode(true);
-        this.root.append(style);
+        this.root.appendChild(style);
 
         this.element = this.root.querySelector("button");
+        this.element.disabled = true;
 
         this.element.addEventListener("click", (event) => {
             this.clickButton();
