@@ -1,7 +1,11 @@
-import "./app/components/olist-input/olist-input.js";
-import "./app/components/olist-password-label/olist-password-label.js";
-import "./app/components/olist-validation-steps/olist-validation-steps.js";
-import "./app/components/olist-button/olist-button.js";
+import "@babel/polyfill";
+import "@webcomponents/webcomponentsjs/webcomponents-bundle";
+import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js';
+
+import "../components/olist-input/olist-input.js";
+import "../components/olist-password-label/olist-password-label.js";
+import "../components/olist-validation-steps/olist-validation-steps.js";
+import "../components/olist-button/olist-button.js";
 
 // Load elements references as constants
 const olistInputs = document.getElementsByTagName("olist-input");
@@ -9,8 +13,6 @@ const olistButton = document.getElementsByTagName("olist-button")[0];
 const olistInputFirstPassword = olistInputs[2];
 const olistInputRepeatPassword = olistInputs[3];
 
-// Set "Criar Conta" button as disabled
-olistButton.disabled = true;
 
 // Add event lister to watch all inputs
 for (let i = 0; i < olistInputs.length; i++) {
@@ -27,6 +29,7 @@ function checkAllFormIsValid() {
     }
     olistButton.disabled = false;
 }
+
 
 // Add event listener in case of that button was clicked and show success notification
 olistButton.addEventListener("button-clicked", () => {
