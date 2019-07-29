@@ -9,11 +9,16 @@ module.exports = {
     mode: "production",
     module: {
         rules: [{
-            exclude: /node_modules/,
-            loader: "babel-loader",
-            options: {
-                presets: ['@babel/preset-env']
+                exclude: /node_modules/,
+                loader: "babel-loader",
+                options: {
+                    presets: ['@babel/preset-env']
+                }
+            },
+            {
+                test: /\.css$/i,
+                use: ['to-string-loader', 'css-loader'],
             }
-        }]
+        ]
     }
 }

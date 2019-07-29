@@ -1,7 +1,4 @@
-const componetStyle = document.createElement('link');
-componetStyle.rel = 'stylesheet';
-componetStyle.type = 'text/css';
-componetStyle.href = './app/components/olist-validation-steps/olist-validation-steps.css';
+import styles from "./olist-validation-steps.css";
 
 class OlistValidationStepsComponent extends HTMLElement {
 
@@ -35,12 +32,10 @@ class OlistValidationStepsComponent extends HTMLElement {
         ];
 
         this.root.innerHTML = `
+            <style>${styles.toString()}</style>
             <div id="validation-steps-wrapper">
             </div>
         `;
-        const style = componetStyle.cloneNode(true);
-        this.root.appendChild(style);
-
         // insert N elements by attributes value
         this.includeStepsValidation();
 

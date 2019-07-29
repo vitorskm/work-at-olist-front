@@ -1,7 +1,4 @@
-const componetStyle = document.createElement('link');
-componetStyle.rel = 'stylesheet';
-componetStyle.type = 'text/css';
-componetStyle.href = './app/components/olist-input/olist-input.css';
+import styles from "./olist-input.css";
 
 class OlistInputComponent extends HTMLElement {
     constructor() {
@@ -24,13 +21,12 @@ class OlistInputComponent extends HTMLElement {
             oneNumber: false
         };
         this.root.innerHTML = `
+            <style>${styles.toString()}</style>
             <div class="olist-input-wrapper">
                 <label class="input-label">${this.getAttribute("label")}</label>
                 <input class="input-item" type="${this.getAttribute("type") == 'repeatPassword' ? 'password' : this.getAttribute("type")}" ${this.placeholder}">
             </div>
         `;
-        const style = componetStyle.cloneNode(true);
-        this.root.appendChild(style);
         // Get the main element of this component
         this.element = this.root.querySelector("input");
         // Get first element of this component

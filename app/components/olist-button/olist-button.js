@@ -1,7 +1,4 @@
-const componetStyle = document.createElement('link');
-componetStyle.rel = 'stylesheet';
-componetStyle.type = 'text/css';
-componetStyle.href = './app/components/olist-button/olist-button.css';
+import styles from "./olist-button.css";
 
 class OlistButtonComponent extends HTMLElement {
 
@@ -27,12 +24,11 @@ class OlistButtonComponent extends HTMLElement {
         `;
 
         this.root.innerHTML = `
+            <style>${styles.toString()}</style>
             <div class="olist-button-wrapper">
                 <button class="button">${this.getAttribute("label")}</button>
             </div>
         `;
-        const style = componetStyle.cloneNode(true);
-        this.root.appendChild(style);
 
         this.element = this.root.querySelector("button");
         this.element.disabled = true;

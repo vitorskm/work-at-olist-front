@@ -1,7 +1,4 @@
-const componetStyle = document.createElement('link');
-componetStyle.rel = 'stylesheet';
-componetStyle.type = 'text/css';
-componetStyle.href = './app/components/olist-password-label/olist-password-label.css';
+import styles from "./olist-password-label.css";
 
 class OlistPasswordLabelComponent extends HTMLElement {
 
@@ -17,12 +14,11 @@ class OlistPasswordLabelComponent extends HTMLElement {
      */
     olistOnInit() {
         this.root.innerHTML = `
+            <style>${styles.toString()}</style>
             <div class="password-label-wrapper">
                 <label class="password-label">${this.getAttribute("label")}</label>
             </div>
         `;
-        const style = componetStyle.cloneNode(true);
-        this.root.appendChild(style);
         this.element = this.root.querySelector("label");
 
         this.addEventListener('valid', (event) => {
