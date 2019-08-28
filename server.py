@@ -1,14 +1,9 @@
-import http.server
-import socketserver
+import os
+from flask import Flask, render_template
 
-PORT = 8080
+template_dir = os.path.abspath('')
+app = Flask(__name__, template_folder=template_dir, static_url_path=template_dir, static_folder='')
 
-Handler = http.server.SimpleHTTPRequestHandler
-Handler.extensions_map.update({
-    ".js": "application/javascript"
-})
-
-
-with socketserver.TCPServer(("localhost", PORT), Handler) as httpd:
-    print("serving at http://localhost:", PORT, sep="")
-    httpd.serve_forever()
+@app.route('/')
+def server():
+    return render_template('index.html')
