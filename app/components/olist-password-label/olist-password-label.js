@@ -1,6 +1,7 @@
 import styles from "./olist-password-label.css";
+import {searchElementNode} from "../../js/mockFunctions";
 
-class OlistPasswordLabelComponent extends HTMLElement {
+export default class OlistPasswordLabelComponent extends HTMLElement {
 
     constructor() {
         super();
@@ -19,7 +20,7 @@ class OlistPasswordLabelComponent extends HTMLElement {
                 <label class="password-label">${this.getAttribute("label")}</label>
             </div>
         `;
-        this.element = this.root.querySelector("label");
+        this.element = process.env.isMock ? searchElementNode(this, 3, 1) : this.root.querySelector("label");
 
         this.addEventListener('valid', (event) => {
             if (event.detail.valid)

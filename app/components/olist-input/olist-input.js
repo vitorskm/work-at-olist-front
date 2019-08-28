@@ -1,6 +1,7 @@
 import styles from "./olist-input.css";
+import {searchElementNode} from "../../js/mockFunctions";
 
-class OlistInputComponent extends HTMLElement {
+export default class OlistInputComponent extends HTMLElement {
     constructor() {
         super();
         this.root = this.attachShadow({ mode: "open" });
@@ -28,9 +29,9 @@ class OlistInputComponent extends HTMLElement {
             </div>
         `;
         // Get the main element of this component
-        this.element = this.root.querySelector("input");
+        this.element = process.env.isMock ? searchElementNode(this, 3, 3) : this.root.querySelector("input");
         // Get first element of this component
-        this.firstElement = this.root.querySelector("DIV");
+        this.firstElement = process.env.isMock ? searchElementNode(this, 3) : this.root.querySelector("DIV");
 
         // Injects a custom style to the element by custom attribute
         if (this.getAttribute("setStyle"))
@@ -42,11 +43,11 @@ class OlistInputComponent extends HTMLElement {
     }
 
     get value() {
-        return this.root.querySelector("input").value;
+        return this.element.value;
     }
 
     set value(inputValue) {
-        return this.root.querySelector("input").value = inputValue;
+        return this.element.value = inputValue;
     }
 
     get type() {

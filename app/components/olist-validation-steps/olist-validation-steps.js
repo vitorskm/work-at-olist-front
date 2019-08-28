@@ -1,6 +1,7 @@
 import styles from "./olist-validation-steps.css";
+import { searchElementNode } from "../../js/mockFunctions";
 
-class OlistValidationStepsComponent extends HTMLElement {
+export default class OlistValidationStepsComponent extends HTMLElement {
 
     constructor() {
         super();
@@ -14,7 +15,7 @@ class OlistValidationStepsComponent extends HTMLElement {
      */
     olistOnInit() {
         // Get number of validation steps
-        this.stepsNumber = Number(this.getAttribute("steps")) - 1;
+        this._stepsNumber = Number(this.getAttribute("steps")) - 1;
 
         /**
          * # StepColors define what color should be for each validation step
@@ -36,15 +37,18 @@ class OlistValidationStepsComponent extends HTMLElement {
             <div id="validation-steps-wrapper">
             </div>
         `;
+
+        this.element = process.env.isMock ? searchElementNode(this, 3) : this.root.getElementById('validation-steps-wrapper');
+
         // insert N elements by attributes value
         this.includeStepsValidation();
 
         this.addEventListener('valid-steps', (event) => {
             // Get all elements child from steps wrapper
-            const stepList = this.root.getElementById('validation-steps-wrapper').children;
+            const stepList = this.element.children;
 
             // Clear all validation steps by default color
-            for (let i = 0; i <= this.stepsNumber; i++) {
+            for (let i = 0; i <= this._stepsNumber; i++) {
                 stepList[i].setAttribute('style', `background: #EAEAF4`);
             }
 
@@ -58,16 +62,25 @@ class OlistValidationStepsComponent extends HTMLElement {
         });
     }
 
+    get stepsNumber() {
+        return this._stepsNumber;
+    }
+
+    set stepsNumber(value) {
+        this._stepsNumber = value;
+    }
+
     /**
      * @description Insert step elemets by atribbute "steps" value
      * @example this.olistOnInit();
      */
     includeStepsValidation() {
-        if (this.stepsNumber > 0) {
-            for (let i = 0; i <= this.stepsNumber; i++) {
+        if (this._stepsNumber >= 0) {
+            for (let i = 0; i <= this._stepsNumber; i++) {
                 const node = document.createElement("A");
                 node.className += "step-shape";
-                this.root.getElementById("validation-steps-wrapper").appendChild(node);
+                node.id = "step-shape";
+                this.element.appendChild(node);
             }
         }
     }
