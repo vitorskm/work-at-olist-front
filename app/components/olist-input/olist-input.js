@@ -103,7 +103,7 @@ class OlistInputComponent extends HTMLElement {
      * @returns {boolean} regexValidationValue
      */
     nameInputValidation(ctx) {
-        const nameRegex = /^([a-zA-z]+([ '-]([a-zA-Z]{3,})+){1,})$/;
+        const nameRegex = /^([a-zA-zÀ-ú]+([ '-]([a-zA-ZÀ-ú]{3,})+){1,})$/;
         return nameRegex.test(String(ctx.value));
     }
 
