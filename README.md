@@ -13,9 +13,10 @@ To get started you should first clone this repository from your computer running
 $ git clone https://github.com/vitorskm/work-at-olist-front.git
 ```
 
-Open the project folder and build the component files using:
+Open the project folder, install npm packages and build the component files using:
 
 ```
+$ npm i
 $ npm run build
 ```
 
@@ -25,12 +26,14 @@ After that you must have a Python and Flask installed and configured on your com
 
 **On Unix Bash (Linux, Mac, etc.):**
 ```
+$ export FLASK_RUN_PORT=8080
 $ export FLASK_APP=server
 $ flask run
 ```
 
 **On Windows CMD:**
 ```
+> set FLASK_RUN_PORT=8080
 > set FLASK_APP=server
 > flask run
 ```
