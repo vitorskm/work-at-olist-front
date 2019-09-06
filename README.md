@@ -1,105 +1,128 @@
-# Work at Olist Frontend
+![Logo of the project](./app/assets/imgs/olist_logo.png)
 
-[Olist](https://olist.com/) is a company that offers an integration platform
-for sellers and marketplaces allowing them to sell their products across
-multiple channels.
-
-The Olist [development team](https://engineering.olist.com/) consists of
-developers who love what they do. Our agile development processes and our
-search for the best development practices provide a great environment for
-professionals who like to create quality software in good company.
-
-We are always looking for good programmers who love to improve their work. We
-give preference to small teams with qualified professionals over large teams
-with average professionals.
-
-This repository contains a problem used to evaluate the candidate skills.
-It's important to notice that solving the problem is just a
-part of what will be evaluated. We also consider other programming disciplines
-like documentation, testing, commit timeline, design and coding best
-practices.
-
-Hints:
-
-* Carefully read the specification to understand all the problem and
-  artifact requirements before starting.
-* Check the recommendations and reference material at the end of this
-  specification.
+# Work at Olist Frontend &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
 
 
-## How to participate
+This project aims to create a data validation layer for entries made to the Olist form. These validations are made in the name, email and password fields, where the last one has three steps: Minimum of 6 characters, at least 1 uppercase character and at least 1 number. This project consists of a hiring evaluation on Olist.
 
-* Make a fork of this repository on Github. If you aren't comfortable with
-   creating a public fork of this project, make a private repository
-   (gitlab offers free private repos) and add developer permission for the
-   user [@tech-hiring](https://gitlab.com/tech-hiring) on project;
-* Follow the instructions on README.md (this file);
-* Deploy your project on a host service (we recommend
-   [Heroku](https://heroku.com) or [Netlify](http://netlify.com/));
-* Apply for the position at our [career page](https://www.99jobs.com/olist)
-   with:
-   * Link to the fork on Github (or gitlab.com);
-   * Link to the project in the deployed host service.
+## Installing / Getting started
+
+To get started you should first clone this repository from your computer running the follow command line
+
+```
+$ git clone https://github.com/vitorskm/work-at-olist-front.git
+```
+
+Open the project folder and build the component files using:
+
+```
+$ npm run build
+```
+
+Now the project contains a folder called **dist** that there's a bundle file generated.
+
+After that you must have a Python and Flask installed and configured on your computer to run:
+
+**On Unix Bash (Linux, Mac, etc.):**
+```
+$ export FLASK_APP=server
+$ flask run
+```
+
+**On Windows CMD:**
+```
+> set FLASK_APP=server
+> flask run
+```
+
+If you don't have python and flask installed, just run:
+```
+$ npx http-server
+```
+
+Now do you have everything running as well, so open any modern browser later then IE11 (or equal) on `http://127.0.0.1:8080` address.
+
+## Developing
+
+### Built With
+This application was developed using:
+- HTML5
+- JavaScript ES6
+- CSS3
+- Python 3.6.8
+- Flask 0.12.2
+- Babel 7.5.5
+- Webpack 4.38.0
+- Webcomponents 2.2.10
+
+### Prerequisites
+You should have installed on your computer
+
+- Python 3.6.8
+    - pip 9.0.1
+        - flask ^0.12.2
+- Node 10.15.1
+    - npm 6.4.1
+
+### Building
+
+After code changes you must run the build script to create a new bundle for your application using the command line
+
+```
+npm run build
+```
 
 
-## Specification
+## Tests
 
-Today, security is everything, but users still have the bad habit of creating
-accounts with weak passwords, and it is essential that we can offer the user
-ways to keep them safe. So, we must do our best to ensure the safety of our
-users.
+For each component of this project there's a file end extension like `.spec.js` witch contains test descriptions for this application. To check if is everything ok, run:
 
-For this, you should implement a **new account** page, composed of Name, Email
-and Password with a strength measure indicator and Password confirmation. All
-these fields are required.
+```
+npm run test
+```
 
+The output result must be something like this
 
-## Style Guide
+```
+Test [OlistInputComponent]
+    Checks email input value
+        ✓ should be a valid email value
+        ✓ should be an invalid email value
+    Checks name input value
+        ✓ should be a valid name value
+        ✓ should be an invalid name value
+    Checks password input value
+        ✓ should be a valid password value
+        ✓ should be an invalid password value
+    Checks repeat password input value
+        ✓ should be a valid repeat password value
+        ✓ should be an invalid repeat password value
 
-The design of the page can be found in the link below:
+Test [OlistPasswordLabelComponent]
+    ✓ should be a valid label using CustomEvent
+    ✓ should be an invalid label using CustomEvent
 
-[Front-End Test Style Guide](https://www.figma.com/file/rsSlx8jDHls6nWXziElWTk/olist----front-end-test)
-
-* It's very important that you build this page exactly as proposed, pixel by
-pixel.
-
-
-## Instructions
-
-* The submit button must be disabled until the form is valid.
-* The Name is required and Email must be a valid email.
-* The invalid input fields should have a border color like the style guide.
-* The valid input fields should have a border color like the style guide.
-* The Password input must make use of the sequence of validation presented in
-  the Style Guide
-* If the form is valid, the submit button should be clickable
-* When the form is submitted, it should present a loading status.
-
-
-## Project Requirements:
-
-* Application must be written in HTML, JavaScript and CSS. You can only make
-  use of a CSS preprocessor.
-* You **may not** use any Javascript library or framework such as React, with the exception of
-  polyfills and testing libraries.
-* You **may** use modern JavaScript development tools such as task runners, compilers and bundlers (ex.: webpack, Babel, ESLint).
-* Your page must support all modern browsers and IE 11+.
-* Write the project documentation containing: [Sample](https://github.com/elsewhencode/project-guidelines/blob/master/README.sample.md)
-  * Installing and testing instructions;
-  * Brief description of the work environment used to run this
-    project (Computer/operating system, text editor/IDE, libraries, etc).
-* Every text or code must be in English.
+Test [OlistValidationStepsComponent]
+    Checks steps number validations
+        ✓ should create N validations steps as well
+    Checks color validation
+        ✓ should have a valid background color
 
 
-## Recommendations
+  12 passing (79ms)
+```
 
-* Write tests!
-* Use [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)), [KISS](https://en.wikipedia.org/wiki/KISS_principle), [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it) and [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
-* Use programming good practices;
-* Use [git best practices](https://www.git-tower.com/learn/git/ebook/en/command-line/appendix/best-practices),
-  with clear messages (written in English);
-* If you build this with Web Components it will be a plus.
-* Feel free to use any language to serve the page if you need. Using Python,
-  Go or Elixir is a plus.
+## Style guide
 
-**Have fun!**
+The style guide was made by Olist and was follow pixel by pixel according the style [here](https://www.figma.com/file/rsSlx8jDHls6nWXziElWTk/olist----front-end-test)
+
+
+## Demonstration
+The application demo can be find by cliking [here](https://watolist.herokuapp.com/) or using the following URL https://watolist.herokuapp.com/
+
+
+## Licensing
+
+Licensed under the MIT license:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
